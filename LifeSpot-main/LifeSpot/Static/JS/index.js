@@ -32,13 +32,13 @@ let sessionLog = function SessionLog()
 	}
 }
 //let filterVideos =
-function FilterVideos(inputString) {
+function FilterVideos(inputParseFunc) {
 	//let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
 	let elements = document.getElementsByClassName('video-container');
 	for (let i = 0; i < elements.length; i++) {
 		let videoText = elements[i].querySelector('.video-title').innerText;
 
-		if (!videoText.toLowerCase().includes(inputString.toLowerCase())) {
+		if (!videoText.toLowerCase().includes(inputParseFunc)) {
 			elements[i].style.display = 'none';
 		}
 		else {
