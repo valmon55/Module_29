@@ -5,7 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Static\JS\" />
       <Folder Include="Views\Shared\" />
     </ItemGroup>
 

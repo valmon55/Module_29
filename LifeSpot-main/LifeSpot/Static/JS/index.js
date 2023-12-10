@@ -1,19 +1,3 @@
-/*let userAge = prompt("Укажите свой возраст:");
-let today = new Date().toLocaleString();
-let userAgent = new Map();
-
-userAgent.set("Age", userAge);
-userAgent.set("SessionDate", today);
-userAgent.set("UserBrowser", window.navigator.userAgent);
-
-if (userAge >= 18) {
-    alert('Приветствуем на LifeSpot' + today);
-}
-else { 
-    alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
-    window.location.href = "http://www.google.com";
-}
-*/
 // создадим объект Map для хранения сессии
 let session = new Map();
 // Сохраним UserAgent
@@ -39,4 +23,18 @@ else {
 // Вывод в консоль
 for (let result of session) {
     console.log(result)
+}
+function FilterVideos() {
+	let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
+	let elements = document.getElementsByClassName('video-container');
+	for (let i = 0; i < elements.length; i++) {
+		let videoText = elements[i].querySelector('.video-title').innerText;
+
+		if (!videoText.toLowerCase().includes(inputString.toLowerCase())) {
+			elements[i].style.display = 'none';
+		}
+		else {
+			elements[i].style.display = 'inline-block';
+		}
+	}
 }
