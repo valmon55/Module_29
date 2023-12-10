@@ -1,4 +1,5 @@
-let checkAge = function CheckAge() {
+//let checkAge = 
+function CheckAge() {
 	// создадим объект Map для хранения сессии
 	let session = new Map();
 	// Сохраним UserAgent
@@ -21,6 +22,10 @@ let checkAge = function CheckAge() {
 		a = true + 20 + "name"
 	}
 
+	return session;
+}
+let sessionLog = function SessionLog() 
+{
 	// Вывод в консоль
 	for (let result of session) {
 		console.log(result)
