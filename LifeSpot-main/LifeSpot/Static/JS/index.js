@@ -37,7 +37,6 @@ function FilterVideos() {
 	let elements = document.getElementsByClassName('video-container');
 	for (let i = 0; i < elements.length; i++) {
 		let videoText = elements[i].querySelector('.video-title').innerText;
-		debugger;
 
 		if (!videoText.toLowerCase().includes(inputParseFunc().toLowerCase()) ) {
 			elements[i].style.display = 'none';
