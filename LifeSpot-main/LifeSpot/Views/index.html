@@ -15,7 +15,13 @@
     <script src="../Static/JS/index.js" type="text/javascript"></script>
     <script>
         //let session = CheckAge();
+        CheckAge();
+        handleSession();
         //sessionLog(session)
+        sessionLog();
+        const inputParseFunc = function () {
+            document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
     </script>
 </head>
 <header id="header-index">
@@ -26,10 +32,7 @@
         <p>
             <input class="search" type="text"
                    oninput=" 
-    const inputParseFunc = function () { 
-            document.getElementsByTagName('input')[0].value.toLowerCase();
-    }
-    FilterVideos(inputParseFunc) 
+    FilterVideos() 
     "
             size=50% />
         </p>

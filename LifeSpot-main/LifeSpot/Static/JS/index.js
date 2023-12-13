@@ -1,11 +1,13 @@
-//let checkAge = 
-function CheckAge() {
-	// создадим объект Map для хранения сессии
-	let session = new Map();
+let session = new Map();
+
+function handleSession() {
+	// Сохраним время начала сессии
+	session.set("startDate", new Date().toLocaleString())
 	// Сохраним UserAgent
 	session.set("userAgent", window.navigator.userAgent)
+}
 
-
+function CheckAge() {
 	// Запросим возраст пользователя и тоже сохраним
 	session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
 
@@ -21,8 +23,6 @@ function CheckAge() {
 		window.location.href = "http://www.google.com"
 		a = true + 20 + "name"
 	}
-
-	return session;
 }
 let sessionLog = function SessionLog() 
 {
@@ -32,13 +32,14 @@ let sessionLog = function SessionLog()
 	}
 }
 //let filterVideos =
-function FilterVideos(inputParseFunc) {
+function FilterVideos() {
 	//let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
 	let elements = document.getElementsByClassName('video-container');
 	for (let i = 0; i < elements.length; i++) {
 		let videoText = elements[i].querySelector('.video-title').innerText;
+		debugger;
 
-		if (!videoText.toLowerCase().includes(inputParseFunc)) {
+		if (!videoText.toLowerCase().includes(inputParseFunc().toLowerCase()) ) {
 			elements[i].style.display = 'none';
 		}
 		else {
