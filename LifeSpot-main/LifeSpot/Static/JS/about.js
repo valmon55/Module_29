@@ -12,8 +12,10 @@ function getFeedbackData()
 const addFeedback = feedback => 
 {
     let elem = document.getElementsByClassName("review-button")[0];
-    elem.innerHTML += `<p>${feedback['name']}<p>` +
-        `<p>${feedback['date']}<p>` +
-        `<p>${feedback['comment']}<p>`;
+    elem.innerHTML +=
+        '    <div class="review-text">\n' +
+        `<p> <i> <b>${feedback['name']}</b> ${feedback['date']}</i></p>` +
+        `<p>${feedback['comment']}</p>` +
+        "</div>";
 }
 
